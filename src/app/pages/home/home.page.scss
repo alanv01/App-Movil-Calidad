@@ -1,0 +1,93 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+ion-title{
+  color: rgb(17, 18, 18);
+  text-align: center;
+}
+
+.subtittle1{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.example-card {
+  width: 300px;
+  margin: 16px;
+  text-align: center;
+  padding: 10px;
+  background-color: #f3f6f1; 
+  border: 1px solid #8a8888; 
+}
+
+.card-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.mat-card-title,
+.mat-card-subtitle {
+  text-align: center;
+  color: #333; /* Cambiar el color del texto */
+}
+
+.example-card img {
+  border-radius: 6px; 
+}
+
+h4, p{
+  text-align: center;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.icono{
+  font-size: 24px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+
+
+.section-separator {
+  height: 20px; 
+  background-color: #f0f0f0; 
+}
+
+
+.section-content {
+  padding: 15px; 
+}
+
+#usertittle{
+  align-items: center;
+}

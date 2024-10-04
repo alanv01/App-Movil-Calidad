@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-input [(ngModel)]="usuario" label="Nombre de Usuario" labelPlacement="floating" placeholder="Ingrese Nombre de Usuario" formControlName="username"></ion-input>
+    </ion-item>
+    <div *ngIf="registroForm.get('username')?.invalid && (registroForm.get('username')?.dirty || registroForm.get('username')?.touched)">
+      <ion-text color="danger" *ngIf="registroForm.get('username')?.errors?.['required']">
+        <small>El nombre de usuario es requerido.</small>
+      </ion-text>
+      <ion-text color="danger" *ngIf="registroForm.get('username')?.errors?.['minlength']">
+        <small>El nombre de usuario debe tener al menos 4 caracteres.</small>
+      </ion-text>
+    </div>
+    <ion-item>
+      <ion-input [(ngModel)]="contrasena" [type]="showPassword ? 'text' : 'password'" label="Contraseña" labelPlacement="floating" placeholder="Ingrese Contraseña" formControlName="password"></ion-input>
+      <ion-button fill="clear" slot="end" (click)="togglePasswordVisibility()">
+        <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <div *ngIf="registroForm.get('password')?.invalid && (registroForm.get('password')?.dirty || registroForm.get('password')?.touched)">
+      <ion-text color="danger" *ngIf="registroForm.get('password')?.errors?.['required']">
+        <small>La contraseña es requerida.</small>
+      </ion-text>
+      <ion-text color="danger" *ngIf="registroForm.get('password')?.errors?.['minlength']">
+        <small>La contraseña debe tener al menos 6 caracteres.</small>
+      </ion-text>
+    </div>
+
+    <ion-button expand="full" type="submit" [disabled]="registroForm.invalid" fill="solid" color="primary" shape="round" size="large" class="animated-button">
+      <ion-icon slot="start" name="person-add"></ion-icon>
+      Registrar
+    </ion-button>
+  </form>
+</ion-content>

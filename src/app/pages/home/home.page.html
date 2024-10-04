@@ -1,0 +1,128 @@
+<ion-menu side="start" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item><ion-button routerLink="/listar" expand="block" color="light">Lista de viajes</ion-button></ion-item>
+      <ion-item><ion-button routerLink="/historial" expand="block" color="light">Historial de viajes</ion-button></ion-item>
+      <ion-item></ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-header [translucent]="true">
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="abrirMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Bienvenido {{usuario}}</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon></mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon></mat-icon>
+    </button>
+  </mat-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" id="main-content">
+  <h4>Conductores Destacados</h4>
+
+  <div class="card-container">
+    <mat-card class="example-card" appearance="outlined">
+      <img mat-card-image src="../../../assets/img/auto1.avif" alt="">
+      <mat-card-content>
+        <p style="color: black;">
+          Datos del Conductor: <br>
+          Nombre: John <br>
+          Marca: ferrari V12 <br>
+          Color: rojo <br>
+          Matricula: XX01231XX <br>
+          Asientos disponibles: 1 <br>
+          Precio: 12000
+        </p>
+      </mat-card-content>
+      <mat-card-actions class="card_button">
+        <button mat-button routerLink="/unirme" style="color: black; background-color: #dfb6b6; margin-right: 10px;">Contactar WSP</button>
+        <button mat-button routerLink="/unirme" style="color: black; background-color: #dfb6b6;">Llamar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="card-container">
+    <mat-card class="example-card" appearance="outlined">
+      <img mat-card-image src="../../../assets/img/Volkswagen Beetle (10).webp" alt="">
+      <mat-card-content>
+        <p style="color: black;">
+          Datos del Conductor: <br>
+          Nombre: Jisus <br>
+          Marca: Volkswagen beetle <br>
+          Color: Amarillo <br>
+          Matricula: X011XX0X1 <br>
+          Asientos disponibles: 1 <br>
+          Precio: 10000
+        </p>
+      </mat-card-content>
+      <mat-card-actions class="card_button">
+        <button mat-button routerLink="/unirme" style="color: black; background-color: #dfb6b6; margin-right: 10px;">Contactar WSP</button>
+        <button mat-button routerLink="/unirme" style="color: black; background-color: #dfb6b6;">Llamar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <h4>Necesitas un viaje?
+    <br>
+    Clickea aca</h4>
+
+  <fa-icon [icon]="faHandPointDown" class="icono"></fa-icon>
+
+  <div style="padding: 15px;">
+    <ion-button routerLink="/agregar" expand="block" color="light">Planear viaje</ion-button>
+  </div>
+  
+  <div class="section-separator"></div>
+
+  <h4>Únete a un Viaje</h4>
+  <p>Selecciona el viaje que deseas tomar de la lista:</p>
+
+  <div class="card-container">
+    <mat-card class="example-card" appearance="outlined">
+      <img mat-card-image src="../../../assets/img/auto2.jpg" alt="Auto de viaje">
+      <mat-card-content>
+        <p style="color: black;">
+          Lugar Encuentro: DuocUC <br>
+          Destino: playa  <br>
+          asiento: 2  <br>
+          fecha_hora: 2024-09-15 08:00 AM  <br>
+          precio: $10.000clp <br>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button routerLink="/unirme" style="color: black; background-color: #dfb6b6;">Unirse</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="card-container">
+    <mat-card class="example-card" appearance="outlined">
+      <img mat-card-image src="../../../assets/img/auto3.jpg" alt="Auto de viaje">
+      <mat-card-content>
+        <p style="color: black;">
+          Lugar Encuentro: DuocUC <br>
+          Destino: Montaña <br>
+          Asiento: 1 <br>
+          Fecha y Hora: 2024-10-20 09:30 AM <br>
+          Precio: $15.000clp <br>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button routerLink="/unirme2" style="color: black; background-color: #dfb6b6;">Unirse</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+ 
+</ion-content>

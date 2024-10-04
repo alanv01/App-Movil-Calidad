@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Planea tu Viaje {{usuario}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-item>
+      <ion-label  position="floating" class="custom-label">Lugar de Encuentro</ion-label>
+      <ion-input [(ngModel)]="lugarencuentro" placeholder="Ingresa el lugar de encuentro"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="floating" class="custom-label">Destino</ion-label>
+      <ion-input [(ngModel)]="destino" placeholder="Ingresa el destino"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="floating" class="custom-label">Cantidad de asientos a usar</ion-label>
+      <ion-input [(ngModel)]="asiento" placeholder="Ingrese cantidad"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="floating" class="custom-label">Fecha</ion-label>
+      <ion-datetime [(ngModel)]="fecha_hora" display-format="DD/MM/YYYY" placeholder="Selecciona la fecha">
+        <span slot="time-label">Hora:</span>
+      </ion-datetime>
+  </ion-item>
+
+  <ion-item>
+      <ion-label class="titulo1">Ubicación del encuentro</ion-label>
+  </ion-item>
+
+  <div class="map-placeholder">
+      <img src="../../../assets/img/mapa.jfif" alt="">
+  </div>
+
+  <ion-item>
+      <ion-label class="titulo1">Por favor selecciona la ubicacion exacta del
+        lugar del encuentro y de destino
+      </ion-label>
+  </ion-item>
+   
+  <ion-button id="alerta1"  expand="block" 
+    class="boton-continuar" color="warning"
+    (click)="grabar()">Planear Viaje
+  </ion-button>
+
+  <ion-alert
+    trigger="alerta1"
+    header="Tu viaje se creo con exito"
+    subHeader=""
+    message="Puedes ver tu viaje en el menu lateral del home."
+    [buttons]="alertButtons"
+  ></ion-alert>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar class="nav-bar">
+    <ion-buttons slot="start">
+      <ion-button class="nav-button" (click)="retroceso()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="nav-button">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+      <ion-button class="nav-button">
+        <ion-icon name="grid-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
